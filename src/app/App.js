@@ -7,7 +7,7 @@ import PokemonDetails from "../components/PokemonDetail";
 class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={window.location.pathname || ""}>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/pokemon/:name" element={<PokemonDetails />} />
