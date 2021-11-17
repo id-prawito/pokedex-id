@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  overflow-x: hidden !important;
+  background-color: #09101B;
+}
+
+::selection {
+  color: #FFFFFF;
+  background: #5447FF;
+}
+
+.App {
+  text-align: center;
+}
+
+
+:root {
+  --grass: #5FBD58;
+  --bug: #92BC2C;
+  --dark: #595761;
+  --dragon: #0C69C8;
+  --electric: #F2D94E;
+  --fairy: #EE90E6;
+  --fighting: #D3425F;
+  --fire: #dc872f;
+  --flying: #A1BBEC;
+  --ghost: #5F6DBC;
+  --ground: #DA7C4D;
+  --ice: #75D0C1;
+  --normal: #A0A29F;
+  --poison: #B763CF;
+  --psychic: #ff2ca8;
+  --rock: #a38c21;
+  --steel: #5695A3;
+  --water: #539DDF;
+}
+
+.poke__type__bg {
+  padding: 10px;
+  max-width: 80px;
+  border-radius: 8px;
+  text-align: center;
+  gap: 5px;
+}
+
+.grass {
+  background: var(--grass);
+}
+
+.bug {
+  background: var(--bug);
+}
+
+.dark {
+  background: var(--dark);
+}
+
+.dragon {
+  background: var(--dragon);
+}
+
+.electric {
+  background: var(--electric);
+}
+
+.fairy {
+  background: var(--fairy);
+}
+
+.fighting {
+  background: var(--fighting);
+}
+
+.flying {
+  background: var(--flying);
+
+}
+
+.ghost {
+  background: var(--ghost);
+}
+
+.ground {
+  background: var(--ground);
+}
+
+.ice {
+  background: var(--ice);
+}
+
+.normal {
+  background: var(--normal);
+}
+
+.poison {
+  background: var(--poison);
+}
+
+.psychic {
+  background: var(--psychic);
+}
+
+.rock {
+  background: var(--rock);
+}
+
+.steel {
+  background: var(--steel);
+}
+
+.water {
+  background: var(--water);
+}
+
+.fire {
+  background: var(--fire);
+}
+
+.input__select {
+  width: 100%;
+  margin: 2px 8px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.input__select :focus {
+  border: none;
+  outline: none;
+
+}
+
+.input__select :hover {
+  border: none;
+  outline: none;
+
+}
+
+.input__select option {
+  border: none;
+  outline: none;
+
+}
+
+.hp {
+  background: var(--grass);
+}
+
+.attack {
+  background: var(--ghost);
+}
+
+.defense {
+  background: var(--dragon);
+}
+
+.special-attack {
+  background: var(--dark);
+}
+
+.special-defense {
+  background: var(--water);
+}
+
+.speed {
+  background: var(--normal);
+}
+
+.card__content {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+@media (min-width: 840px) and (max-width: 1099px) {
+  .card__content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card__li {
+  width: 220px;
+}
+
+@media (min-width: 600px) and (max-width: 839px) {
+  .card__content {
+    grid-template-columns: auto auto;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 599px) {
+  .card__content {
+    grid-template-columns: auto;
+  }
+}
