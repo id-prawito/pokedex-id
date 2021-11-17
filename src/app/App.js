@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/pokemon/:name" element={<PokemonDetails />} />
                 </Routes>
             </BrowserRouter>
