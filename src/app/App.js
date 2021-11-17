@@ -10,7 +10,11 @@ class App extends React.Component {
             <BrowserRouter basename={window.location.pathname || ""}>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route path="/pokemon/:name" element={<PokemonDetails />} />
+                    <Route
+                        exact
+                        path="/pokemon/:name"
+                        element={<PokemonDetails />}
+                    />
                 </Routes>
             </BrowserRouter>
         );
