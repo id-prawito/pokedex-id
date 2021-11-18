@@ -8,6 +8,8 @@ Pokédex-id is developed using pokemon API and uses styled components to create 
 
 ![pokedex-id](https://user-images.githubusercontent.com/71351196/142396141-ecbeb7f2-0a52-4f08-ad22-19ef5504f5a9.PNG)
 
+Preview Pokédex-id : [Here](https://id-prawito.github.io/pokedex-id/)
+
 ## Download and Usage
 
 To begin using this project, choose one of the following options to get started:
