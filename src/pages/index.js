@@ -502,9 +502,6 @@ export class Home extends React.Component {
                                 <BungkusIcon>
                                     <Icon src={logoTypes}></Icon>
                                 </BungkusIcon>
-                                <BungkusIcon>
-                                    <Icon src={logoTypes}></Icon>
-                                </BungkusIcon>
                             </BungkusanIconnya>
                             <Description>Design Pokédex Card</Description>
                         </IconCategory>
