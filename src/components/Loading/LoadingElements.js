@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardLoading = styled.div`
-    width: 100%;
+    width: 220px;
     min-height: 300px;
     text-align: center;
     border-radius: 24px;

@@ -18,9 +18,9 @@ import {
     BungkusanIconnya,
 } from "../components/Category/CategoryElements";
 import Scroll from "../components/Navbar/Scroll";
-import "../app/App.css";
+import "../app/app.css";
 
-export class Home extends React.Component {
+export class PokemonHome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -477,11 +477,16 @@ export class Home extends React.Component {
         };
 
         document.title = `Pokédex-id`;
+
+        // console.log(this.state.allPokemons);
         return (
             <>
                 <Scroll />
                 <Navbar />
-                <HomeSection />
+                <HomeSection
+                    description="Search for a Pokémon by name or using its National
+                            Pokédex number."
+                />
                 <Filters
                     regions={this.state.regions}
                     types={this.state.types}
@@ -505,7 +510,15 @@ export class Home extends React.Component {
                             </BungkusanIconnya>
                             <Description>Design Pokédex Card</Description>
                         </IconCategory>
-                        {this.state.showLoading && <Loading />}
+                        {this.state.showLoading && (
+                            <CardContent>
+                                <ul className="card__content">
+                                    <li className="card__li">
+                                        <Loading />
+                                    </li>
+                                </ul>
+                            </CardContent>
+                        )}
                         {!this.state.showLoading && (
                             <CardContent>
                                 {this.state.isSearch ? (

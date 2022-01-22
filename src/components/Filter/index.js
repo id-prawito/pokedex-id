@@ -7,7 +7,7 @@ import {
     SelectInput,
 } from "./FilterElements";
 import Select from "react-select";
-import "../../app/App.css";
+import "../../app/app.css";
 
 const customStyles = {
     control: (styles) => ({

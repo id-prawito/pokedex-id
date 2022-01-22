@@ -1,5 +1,36 @@
 import styled from "styled-components";
+
 import { Link as LinkR } from "react-router-dom";
+
+export const ListContainer = styled.div`
+    max-width: 1200px;
+    height: 50vh;
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .grid_content {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        width: 100%;
+        gap: 20px;
+        padding: 20px;
+        align-items: center;
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+    }
+`;
 
 export const PokemonDetailsContainer = styled.div`
     width: 100%;
@@ -197,6 +228,29 @@ export const Description = styled.p`
     font-weight: 400;
     color: #fff;
     margin-bottom: 10px;
+`;
+
+export const ImgBodyDetails = styled.img`
+    height: 400px;
+    transition: 0.1s all ease;
+    opacity: 1;
+    max-width: 100%;
+    /* filter: grayscale(100%);
+    &:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.3);
+    } */
+
+    @media (min-width: 580px) and (max-width: 949px) {
+        height: 400px;
+        padding: 50px;
+    }
+
+    @media (min-width: 320px) and (max-width: 579px) {
+        height: 300px;
+        padding: 30px;
+    }
 `;
 
 export const ImgBody = styled.img`

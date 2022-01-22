@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import logoImg from "../../assets/images/pokedex.png";
+import React, { useEffect, useState, useContext } from "react";
+import { Nav, NavbarContainer, NavMenu } from "./NavbarElements";
+import { Link } from "react-router-dom";
 import github from "../../assets/images/github-white.svg";
-import {
-    GithubIcon,
-    LogoImg,
-    Nav,
-    NavbarContainer,
-    NavItem,
-    NavLinks,
-    NavLogo,
-    NavMenu,
-} from "./Navbar";
+import logoImg from "../../assets/images/pokedex.png";
+import { GlobalContext } from "../../context/GlobalState";
 
 const Navbar = () => {
     const [scrollNav, setScrollNav] = useState(false);
@@ -35,19 +28,27 @@ const Navbar = () => {
     const openGithub = () => {
         window.open("https://github.com/id-prawito");
     };
+
+    const { listPokemon } = useContext(GlobalContext);
     return (
         <>
             <Nav scrollNav={scrollNav}>
                 <NavbarContainer>
-                    <NavLogo to="/" onClick={toggleHome}>
-                        <LogoImg src={logoImg}></LogoImg>
-                    </NavLogo>
+                    <Link className="nav_logo" to="/" onClick={toggleHome}>
+                        <img alt="image_nav" src={logoImg}></img>
+                    </Link>
                     <NavMenu>
-                        <NavItem>
-                            <NavLinks onClick={openGithub}>
-                                <GithubIcon src={github} />
-                            </NavLinks>
-                        </NavItem>
+                        <li>
+                            <Link to="/mypokemon" className="navlinks_link">
+                                My Pokemon List
+                                <span className="text_jumlah">
+                                    {listPokemon.length}
+                                </span>
+                            </Link>
+                            <div className="navlinks" onClick={openGithub}>
+                                <img src={github} alt="images_github" />
+                            </div>
+                        </li>
                     </NavMenu>
                 </NavbarContainer>
             </Nav>

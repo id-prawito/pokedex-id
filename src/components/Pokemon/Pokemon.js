@@ -38,6 +38,54 @@ export const ImageCard = styled.img`
     } */
 `;
 
+export const CardList = styled.div`
+    width: 100%;
+    min-height: 300px;
+    text-align: center;
+    border-radius: 24px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    background-color: #222;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        background-image: url(${imgUrl});
+        position: absolute;
+        left: -30px;
+        top: -10px;
+        width: 43%;
+        height: 28%;
+        opacity: 0.2;
+        /* clip-path: circle(100%); */
+        transition: 0.5s ease-in-out;
+    }
+
+    &:hover::before {
+        /* clip-path: circle(70px at 5% 5%); */
+        transform: scale(1.3);
+    }
+
+    &::after {
+        content: "${(props) => props.Namanya}";
+        position: absolute;
+        text-transform: capitalize;
+        top: 50%;
+        font-size: 5em;
+        font-weight: 800;
+        font-style: italic;
+        color: rgba(255, 255, 25, 0.03);
+        left: -10%;
+        right: -10%;
+    }
+
+    &:hover ${ImageCard} {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.3);
+    }
+`;
 export const Card = styled.div`
     width: 100%;
     min-height: 300px;
@@ -184,12 +232,27 @@ export const Types = styled.div`
     border-radius: 8px;
     text-align: center;
     gap: 5px;
+
+    .palingatas {
+        position: relative;
+        z-index: 99;
+    }
 `;
 
 export const TypesText = styled.div`
     display: flex;
     flex-direction: row;
     gap: 5px;
+
+    .text_hover {
+        color: #fff;
+        font-size: 14px;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 `;
 
 export const Weight = styled.div`

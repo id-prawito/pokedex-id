@@ -1,0 +1,7 @@
+Styled Components || Clean Code
+
++ Components
+- Navbar
+  + index.js        || done
+  + NavbarElements  || done
+  + Scroll          || done

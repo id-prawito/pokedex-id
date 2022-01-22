@@ -14,19 +14,17 @@ import {
 export class Category extends React.Component {
     render() {
         return (
-            <>
-                <CategoryContainer>
-                    <CategoryContent>
-                        <IconCategory>
-                            <BungkusIcon>
-                                <Icon src={logoTypes}></Icon>
-                            </BungkusIcon>
-                            <Description>Design Pokédex Card</Description>
-                        </IconCategory>
-                        <Pokemon />
-                    </CategoryContent>
-                </CategoryContainer>
-            </>
+            <CategoryContainer>
+                <CategoryContent>
+                    <IconCategory>
+                        <BungkusIcon>
+                            <Icon src={logoTypes}></Icon>
+                        </BungkusIcon>
+                        <Description>Design Pokédex Card</Description>
+                    </IconCategory>
+                    <Pokemon />
+                </CategoryContent>
+            </CategoryContainer>
         );
     }
 }

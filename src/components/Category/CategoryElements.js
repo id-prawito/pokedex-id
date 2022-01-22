@@ -30,7 +30,7 @@ export const CategoryContent = styled.div`
     display: grid;
     width: 100%;
     padding: 35px;
-    grid-template-columns: 400px auto;
+    grid-template-rows: 150px auto;
 
     @media (min-width: 1100px) and (max-width: 1280px) {
         grid-template-columns: 300px auto;
@@ -52,7 +52,9 @@ export const CategoryContent = styled.div`
 
 export const IconCategory = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
 
     @media (min-width: 600px) and (max-width: 839px) {
         flex-direction: row;
@@ -85,7 +87,6 @@ export const Description = styled.p`
     font-size: 40px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.64);
-    margin-top: 10px;
     line-height: 60px;
 
     @media (min-width: 600px) and (max-width: 839px) {
@@ -122,7 +123,7 @@ export const ImgBox = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10000;
+    z-index: 100;
     width: 100%;
     height: 220px;
     transition: 0.5s;

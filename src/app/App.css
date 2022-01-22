@@ -7,6 +7,17 @@
   font-family: 'Rubik', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: unset;
+}
+
+button {
+  /* background: transparent; */
+  border: none;
+}
+
 body {
   overflow-x: hidden !important;
   background-color: #09101B;
@@ -181,7 +192,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, auto);
   list-style-type: none;
 }
 

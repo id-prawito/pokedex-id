@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import "../../app/App.css";
+import "../app/app.css";
+
 import {
     AbilitiesBungkus,
     About,
@@ -20,7 +21,7 @@ import {
     HeaderDetails,
     Icon,
     IconEvo,
-    ImgBody,
+    ImgBodyDetails,
     Isinya,
     Judulnya,
     Nama,
@@ -43,21 +44,15 @@ import {
     TypesText,
     Weight,
     WeightHeight,
-    LogoImg,
-    Nav,
-    NavbarContainer,
-    NavLogo,
-} from "./PokemonDetailsElements";
-// import imgBody from "../../assets/images/bulbasur.svg";
+} from "../components/Elements/Elements";
 import { Link } from "react-router-dom";
-import logoImg from "../../assets/images/pokedex.png";
 import ReactTooltip from "react-tooltip";
+import ButonCatch from "../components/Button";
+import Navbar from "../components/Navbar";
 
 const PokemonDetails = () => {
     let { name } = useParams();
-
     const [data, setData] = useState([]);
-    // const [abs, setAbs] = useState([]);
     const [types, setTypes] = useState([]);
     const [statistics, setStatistics] = useState([]);
     const [deskripsi, setDescription] = useState({});
@@ -66,23 +61,20 @@ const PokemonDetails = () => {
     const [images, setImages] = useState({});
     const [url, setUrlnya] = useState([]);
     const [evochain, setEvoChain] = useState([]);
-
     const [urlability, setUrlAbilitinya] = useState([]);
     const [bisa, setBisa] = useState([]);
-
-    const [idnya, setIDnya] = useState();
+    const [idnya, setIDnya] = useState("");
 
     useEffect(() => {
         const getData = async () => {
             try {
                 const response = await axios
                     .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-                    .catch((err) => console.log("Error:", err));
+                    .catch();
                 setData(response.data);
                 setIDnya(response.data.id);
                 const statistics = [];
-                // const id_name = response.data.id;
-                // // console.log(response);
+
                 for (let j = 0; j < response.data.stats.length; j++) {
                     const Obj = {};
                     Obj["stat__name"] = response.data.stats[j].stat.name;
@@ -122,7 +114,7 @@ const PokemonDetails = () => {
             try {
                 const response = await axios
                     .get(`https://pokeapi.co/api/v2/pokemon-species/${idnya}`)
-                    .catch((err) => console.log("Error:", err));
+                    .catch();
                 var str = JSON.stringify(response.data);
                 // Remove \ from the string
                 var convertedStr = str.replace(/\f/g, "");
@@ -186,8 +178,6 @@ const PokemonDetails = () => {
                 };
                 setDescription(Objectnya);
             }
-
-            // setUrlnya(response.data.evolution_chain.url);
         };
         getDescription();
     }, [idnya]);
@@ -196,11 +186,9 @@ const PokemonDetails = () => {
         const getEvoImages = async () => {
             try {
                 const response = await axios.get(url.url);
-                // console.log(response);
                 const evoChain = [];
-                // console.log(evoChain);
                 let evoData = response.data.chain;
-                // console.log(evoData);
+
                 do {
                     const evoDetails = evoData["evolution_details"][0];
                     evoChain.push({
@@ -214,8 +202,6 @@ const PokemonDetails = () => {
                     });
                     evoData = evoData["evolves_to"][0];
                 } while (!!evoData && evoData.hasOwnProperty("evolves_to"));
-
-                // setEvoChain(evoChain);
 
                 for (let i = 0; i < evoChain.length; i++) {
                     const response = await axios
@@ -258,7 +244,6 @@ const PokemonDetails = () => {
                     evonyaNamanya.push(ObjectTik);
                 }
                 setBisa(evonyaNamanya);
-                // evonyaNamanya.push(abilitydetail);
             } catch (error) {
                 console.log("error", error);
             }
@@ -281,29 +266,14 @@ const PokemonDetails = () => {
     // console.log(abilitydetail);
     // console.log(idnya);
 
-    const [scrollNav, setScrollNav] = useState(false);
+    // const location = useLocation();
+    // const { id } = location.state;
 
-    const changeNav = () => {
-        if (window.scrollY >= 150) {
-            setScrollNav(true);
-        } else {
-            setScrollNav(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", changeNav);
-    }, []);
+    // console.log(id);
 
     return (
         <>
-            <Nav scrollNav={scrollNav}>
-                <NavbarContainer>
-                    <NavLogo to="/">
-                        <LogoImg src={logoImg}></LogoImg>
-                    </NavLogo>
-                </NavbarContainer>
-            </Nav>
+            <Navbar />
             <PokemonDetailsContainer>
                 <PokemonDetailsContent>
                     <HeaderDetails>
@@ -329,9 +299,13 @@ const PokemonDetails = () => {
                     <BodyDetails>
                         <BungkusanDetails>
                             {images.gambar === null ? (
-                                <ImgBody src={images.gambar_2}></ImgBody>
+                                <ImgBodyDetails
+                                    src={images.gambar_2}
+                                ></ImgBodyDetails>
                             ) : (
-                                <ImgBody src={images.gambar}></ImgBody>
+                                <ImgBodyDetails
+                                    src={images.gambar}
+                                ></ImgBodyDetails>
                             )}
 
                             <Tulisan>{names.nama}</Tulisan>
@@ -392,6 +366,13 @@ const PokemonDetails = () => {
                                         </ReactTooltip>
                                     </BungkusIcon>
                                 ))}
+                                <ButonCatch
+                                    nama={data.name}
+                                    tipe={types}
+                                    image={images.gambar}
+                                    data={data}
+                                    number={data.id}
+                                />
                             </Pembungkus>
                             <BaseStat>Base Stat</BaseStat>
                             <BungkusHpProgress>

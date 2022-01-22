@@ -16,17 +16,14 @@ import {
     DescriptionButton,
 } from "./HomeElements";
 
-const HomeSection = () => {
+const HomeSection = ({ description }) => {
     return (
         <>
             <HomeContainer>
                 <HomeContent>
                     <Content>
                         <Judul>Pokédex.design</Judul>
-                        <Description>
-                            Search for a Pokémon by name or using its National
-                            Pokédex number.
-                        </Description>
+                        <Description>{description}</Description>
                     </Content>
                 </HomeContent>
                 <HomeButton>
