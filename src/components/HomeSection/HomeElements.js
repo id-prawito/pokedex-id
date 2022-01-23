@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
     width: 100%;
-    height: 45vh;
+    /* height: 45vh; */
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0px;
 
     @media (min-width: 1280px) {
         max-width: 1300px;
@@ -23,12 +24,12 @@ export const HomeContainer = styled.div`
 
     @media (min-width: 600px) and (max-width: 839px) {
         max-width: 830px;
-        height: 60vh;
+        padding: 20px 0px;
     }
 
     @media (min-width: 320px) and (max-width: 599px) {
         max-width: 550px;
-        height: 55vh;
+        padding: 20px 0px;
     }
 `;
 

@@ -40,7 +40,8 @@ const Navbar = () => {
                     <NavMenu>
                         <li>
                             <Link to="/mypokemon" className="navlinks_link">
-                                My Pokemon List
+                                <p className="laptop">My Pokemon List</p>
+                                <p className="mobile">List</p>
                                 <span className="text_jumlah">
                                     {listPokemon.length}
                                 </span>

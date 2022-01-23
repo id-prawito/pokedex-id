@@ -4,7 +4,7 @@ import { Link as LinkR } from "react-router-dom";
 
 export const ListContainer = styled.div`
     max-width: 1300px;
-    height: 50vh;
+    /* height: 50vh; */
     justify-content: flex-start;
     margin-right: auto;
     margin-left: auto;
@@ -23,6 +23,18 @@ export const ListContainer = styled.div`
 
         @media (min-width: 320px) and (max-width: 599px) {
             grid-template-columns: repeat(1, auto);
+        }
+
+        @media (min-width: 1100px) and (max-width: 1300px) {
+            grid-template-columns: repeat(4, auto);
+        }
+
+        @media (min-width: 840px) and (max-width: 1099px) {
+            grid-template-columns: repeat(3, auto);
+        }
+
+        @media (min-width: 600px) and (max-width: 839px) {
+            grid-template-columns: auto auto;
         }
 
         .card {

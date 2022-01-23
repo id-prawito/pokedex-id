@@ -148,6 +148,22 @@ export const NavMenu = styled.ul`
                 -webkit-transform: translate(30%, -40%);
                 transform: translate(30%, -40%);
             }
+
+            .laptop {
+                display: initial;
+
+                @media (min-width: 320px) and (max-width: 599px) {
+                    display: none;
+                }
+            }
+
+            .mobile {
+                display: none;
+
+                @media (min-width: 320px) and (max-width: 599px) {
+                    display: initial;
+                }
+            }
         }
     }
 `;

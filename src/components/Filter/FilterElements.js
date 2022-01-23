@@ -22,7 +22,7 @@ export const SelectContainer = styled.div`
     }
 
     @media (min-width: 320px) and (max-width: 599px) {
-        height: 40vh;
+        /* height: 40vh; */
     }
 `;
 

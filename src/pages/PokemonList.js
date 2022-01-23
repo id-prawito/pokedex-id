@@ -5,19 +5,48 @@ import Navbar from "../components/Navbar";
 import Scroll from "../components/Navbar/Scroll";
 import { GlobalContext } from "../context/GlobalState";
 import { PokemonCardList } from "../components/Pokemon/index.js";
+import { motion } from "framer-motion";
 
 const PokemonList = () => {
     const { listPokemon } = useContext(GlobalContext);
 
+    const container = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delayChildren: 0.8,
+                staggerChildren: 0.4,
+            },
+        },
+    };
+
+    const item_nya = {
+        hidden: { x: -120, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+        },
+    };
+
     return (
         <>
-            <Scroll />
             <Navbar />
             <HomeSectionList description="This page is My Pokemon List." />
             <ListContainer>
-                <div className="grid_content">
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid_content"
+                >
                     {listPokemon.map((item, i) => (
-                        <li key={i} className="card__li">
+                        <motion.li
+                            variants={item_nya}
+                            key={i}
+                            className="card__li"
+                        >
                             <PokemonCardList
                                 id={item.id}
                                 name={item.name}
@@ -33,10 +62,11 @@ const PokemonList = () => {
                                 }
                                 titleNew={item.title}
                             />
-                        </li>
+                        </motion.li>
                     ))}
-                </div>
+                </motion.div>
             </ListContainer>
+            <Scroll />
         </>
     );
 };
