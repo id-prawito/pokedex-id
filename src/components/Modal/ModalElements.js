@@ -210,18 +210,18 @@ export const ModalContent = styled.div`
                 font-size: 14px;
                 font-weight: 500;
             }
+        }
 
-            .input_form {
-                border: 1px solid #fff;
-                border-radius: 4px;
-                padding: 10px;
-                height: 40px;
-                font-size: 14px;
+        .input_form {
+            border: 1px solid #fff;
+            border-radius: 4px;
+            padding: 10px;
+            height: 40px;
+            font-size: 14px;
 
-                &:focus {
-                    outline: none;
-                    border: 1px solid #0f8af9;
-                }
+            &:focus {
+                outline: none;
+                border: 1px solid #0f8af9;
             }
         }
     }

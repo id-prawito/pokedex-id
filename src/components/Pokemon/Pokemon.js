@@ -156,6 +156,7 @@ export const Utama = styled.div`
 export const Footer = styled.div`
     grid-area: footer;
     margin-top: 10px;
+    z-index: 0;
 `;
 
 export const IconTypes = styled.img`
@@ -247,10 +248,10 @@ export const TypesText = styled.div`
     .text_hover {
         color: #fff;
         font-size: 14px;
-        transition: 0.3s ease-in-out;
+        transition: 0.1s ease-in-out;
 
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
     }
 `;

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import ReactTooltip from "react-tooltip";
+// import ReactTooltip from "react-tooltip";
 import pokeball from "../../assets/images/logo.png";
 import Modal from "../Modal";
 import Snackbar from "../Snackbar";
@@ -9,7 +9,7 @@ const ButonCatch = ({ data, image, tipe, nama, number }) => {
     const [random, setRandom] = useState(0);
     const [showModal, setShowModal] = useState(false);
 
-    const snackbarRef = useRef(null);
+    const snackbarRef11 = useRef(null);
 
     const SnackbarType = {
         success: "success",
@@ -19,7 +19,7 @@ const ButonCatch = ({ data, image, tipe, nama, number }) => {
     const clickHandle = () => {
         const num = Math.floor(Math.random() * (1 + 1));
         setRandom(num);
-        snackbarRef.current.show();
+        snackbarRef11.current.show();
 
         if (num === 1) {
             setShowModal((prev) => !prev);
@@ -46,24 +46,24 @@ const ButonCatch = ({ data, image, tipe, nama, number }) => {
                     showModal={showModal}
                     setShowModal={setShowModal}
                 />
-                <ReactTooltip
+                {/* <ReactTooltip
                     place="top"
                     type="light"
                     effect="solid"
                     id="catch"
                 >
                     <p className="text_tooltip">Catch The Pokemon {random}</p>
-                </ReactTooltip>
+                </ReactTooltip> */}
                 {random === 1 ? (
                     <Snackbar
-                        ref={snackbarRef}
-                        message="Something went wrong!"
+                        ref={snackbarRef11}
+                        message="Yes, your success to gacha this Pokemon!"
                         type={SnackbarType.success}
                     />
                 ) : (
                     <Snackbar
-                        ref={snackbarRef}
-                        message="Upss, your gocha is failed, try again!"
+                        ref={snackbarRef11}
+                        message="Upss, your gacha is failed, try again!"
                         type={SnackbarType.fail}
                     />
                 )}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 
 export const ListContainer = styled.div`
-    max-width: 1200px;
+    max-width: 1300px;
     height: 50vh;
     justify-content: flex-start;
     margin-right: auto;
@@ -16,9 +16,14 @@ export const ListContainer = styled.div`
         display: grid;
         grid-template-columns: repeat(5, auto);
         width: 100%;
-        gap: 20px;
+        gap: 30px;
         padding: 20px;
+        justify-content: center;
         align-items: center;
+
+        @media (min-width: 320px) and (max-width: 599px) {
+            grid-template-columns: repeat(1, auto);
+        }
 
         .card {
             display: flex;

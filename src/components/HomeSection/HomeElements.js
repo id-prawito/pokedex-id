@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 45vh;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
@@ -11,7 +11,7 @@ export const HomeContainer = styled.div`
     align-items: center;
 
     @media (min-width: 1280px) {
-        max-width: 1200px;
+        max-width: 1300px;
     }
     @media (min-width: 1100px) and (max-width: 1280px) {
         max-width: 1100px;
@@ -92,6 +92,29 @@ export const HomeButton = styled.div`
     }
 `;
 
+export const HomeButtonList = styled.div`
+    flex-direction: row;
+    width: 100%;
+    padding: 35px;
+    display: flex;
+
+    @media (min-width: 840px) and (max-width: 1099px) {
+        grid-template-columns: auto;
+        flex-direction: column;
+    }
+
+    @media (min-width: 600px) and (max-width: 839px) {
+        grid-template-columns: auto;
+        flex-direction: column;
+    }
+
+    @media (min-width: 320px) and (max-width: 599px) {
+        grid-template-columns: auto;
+        padding: 10px 35px;
+        flex-direction: column;
+    }
+`;
+
 export const LogoImg = styled.img`
     height: 35px;
     transition: 0.1s all ease;
@@ -125,7 +148,7 @@ export const JudulButton = styled.a`
     font-size: 14px;
     display: inline-block;
     padding: 16px 48px;
-    border-radius: 100px;
+    border-radius: 20px;
     color: #ffffff;
     background-color: transparent;
     cursor: pointer;
@@ -136,8 +159,38 @@ export const JudulButton = styled.a`
     max-width: 200px;
     text-align: center;
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.02);
     }
+    @media (min-width: 320px) and (max-width: 599px) {
+        padding: 16px 48px;
+        font-size: 12px;
+    }
+`;
+
+export const JudulButtonRemove = styled.div`
+    font-size: 14px;
+    display: inline-block;
+    padding: 16px 48px;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: red;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid #fff;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    max-width: 100%;
+    text-align: center;
+    &:hover {
+        transform: scale(1.02);
+    }
+    .button_remove {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        background: transparent;
+    }
+
     @media (min-width: 320px) and (max-width: 599px) {
         padding: 16px 48px;
         font-size: 12px;

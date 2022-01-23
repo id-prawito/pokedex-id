@@ -78,7 +78,7 @@ export default function Pokemon(props) {
 export function PokemonCardList(props) {
     const { id, image, name, type, weight, height, titleNew } = props;
     const { removePokemonFromList } = useContext(GlobalContext);
-    const snackbarRef = useRef(null);
+    const snackbarRef12 = useRef(null);
 
     const SnackbarType = {
         success: "success",
@@ -86,12 +86,12 @@ export function PokemonCardList(props) {
     };
     const handleClickRemove = (value) => () => {
         removePokemonFromList(value);
-        snackbarRef.current.show();
+        snackbarRef12.current.show();
     };
     return (
         <>
             <Snackbar
-                ref={snackbarRef}
+                ref={snackbarRef12}
                 message="Succes to remove your Pokemon!"
                 type={SnackbarType.fail}
             />
@@ -99,6 +99,7 @@ export function PokemonCardList(props) {
                 <IsiCard>
                     <Header>
                         <Number> #{String(id).padStart(3, "0")}</Number>
+
                         <TypesText>
                             <Types
                                 data-tip
@@ -111,6 +112,8 @@ export function PokemonCardList(props) {
                                     style={{
                                         background: "transparent",
                                         cursor: "pointer",
+                                        display: "flex",
+                                        alignItems: "center",
                                     }}
                                     onClick={handleClickRemove(titleNew)}
                                 >

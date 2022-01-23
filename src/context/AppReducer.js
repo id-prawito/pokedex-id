@@ -12,6 +12,13 @@ const variable = (state, action) => {
                     (movie) => movie.title !== action.payload
                 ),
             };
+
+        case "REMOVE_ALL_POKEMON_FROM_LIST":
+            return {
+                ...state,
+                listPokemon: [],
+            };
+
         default:
             return state;
     }

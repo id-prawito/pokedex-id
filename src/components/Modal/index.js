@@ -21,32 +21,25 @@ const Modal = ({
     number,
 }) => {
     const modalRef = useRef();
-
+    const snackbarRef12 = useRef(null);
+    const { addPokemonToList } = useContext(GlobalContext);
     const [state, setState] = useState({});
-
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-
         setState((old) => ({ ...old, [name]: value }));
     };
-
-    const { addPokemonToList } = useContext(GlobalContext);
-
-    const snackbarRef = useRef(null);
-
     const SnackbarType = {
         success: "success",
         fail: "fail",
     };
-
     const handleInput = () => {
         addPokemonToList(Object.assign(data, state));
         setShowModal((prev) => !prev);
-        snackbarRef.current.show();
         setState("");
+        window.location.reload();
+        snackbarRef12.current.show();
     };
-
     const closeModal = () => {
         setShowModal((prev) => !prev);
         setState("");
@@ -55,7 +48,7 @@ const Modal = ({
     return (
         <>
             <Snackbar
-                ref={snackbarRef}
+                ref={snackbarRef12}
                 message="Success add Pokemon to list!"
                 type={SnackbarType.success}
             />
@@ -97,27 +90,33 @@ const Modal = ({
                                     <div className="footer_modal">
                                         <div className="atas">Input</div>
                                         <div className="bawah">
-                                            <div className="content_form">
-                                                <div className="form">
-                                                    <input
-                                                        placeholder="input your pokemon name !"
-                                                        name="title"
-                                                        value={
-                                                            state.title || ""
-                                                        }
-                                                        onChange={handleChange}
-                                                        type="text"
-                                                        className="input_form"
-                                                    />
+                                            <form onSubmit={handleInput}>
+                                                <div className="content_form">
+                                                    <div className="class_form">
+                                                        <input
+                                                            placeholder="input your pokemon name !"
+                                                            name="title"
+                                                            value={
+                                                                state.title ||
+                                                                ""
+                                                            }
+                                                            onChange={
+                                                                handleChange
+                                                            }
+                                                            type="text"
+                                                            className="input_form"
+                                                        />
+                                                    </div>
+                                                    <Button>
+                                                        Process To Next Step
+                                                        <FaAngleRight />
+                                                    </Button>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <Button onClick={handleInput}>
-                                Process To Next Step <FaAngleRight />
-                            </Button>
                         </ModalContent>
                         <CloseModalButton
                             className="button_close"

@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const SelectContainer = styled.div`
     width: 100%;
-    height: 20vh;
+    /* height: 20vh; */
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
 
     @media (min-width: 1280px) {
-        max-width: 1200px;
+        max-width: 1300px;
     }
 
     @media (min-width: 1100px) and (max-width: 1280px) {

@@ -25,12 +25,17 @@ export const GlobalProvider = (props) => {
         dispatch({ type: "REMOVE_POKEMON_FROM_LIST", payload: title });
     };
 
+    const removeAllPokemonFromList = () => {
+        dispatch({ type: "REMOVE_ALL_POKEMON_FROM_LIST", payload: {} });
+    };
+
     return (
         <GlobalContext.Provider
             value={{
                 listPokemon: state.listPokemon,
                 addPokemonToList,
                 removePokemonFromList,
+                removeAllPokemonFromList,
             }}
         >
             {props.children}

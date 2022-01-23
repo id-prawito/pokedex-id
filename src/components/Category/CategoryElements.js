@@ -10,7 +10,7 @@ export const CategoryContainer = styled.div`
     display: flex;
 
     @media (min-width: 1281px) {
-        max-width: 1200px;
+        max-width: 1300px;
     }
 
     @media (min-width: 1100px) and (max-width: 1280px) {
@@ -131,8 +131,19 @@ export const ImgBox = styled.div`
 
 export const CardContent = styled.div`
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
     gap: 30px;
+
+    .card__content_home {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        @media (min-width: 320px) and (max-width: 599px) {
+            grid-template-columns: repeat(1, auto);
+        }
+    }
 `;
 
 export const CardContainerTambah = styled.div`

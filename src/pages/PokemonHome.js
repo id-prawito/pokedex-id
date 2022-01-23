@@ -512,7 +512,19 @@ export class PokemonHome extends React.Component {
                         </IconCategory>
                         {this.state.showLoading && (
                             <CardContent>
-                                <ul className="card__content">
+                                <ul className="card__content_home">
+                                    <li className="card__li">
+                                        <Loading />
+                                    </li>
+                                    <li className="card__li">
+                                        <Loading />
+                                    </li>
+                                    <li className="card__li">
+                                        <Loading />
+                                    </li>
+                                    <li className="card__li">
+                                        <Loading />
+                                    </li>
                                     <li className="card__li">
                                         <Loading />
                                     </li>

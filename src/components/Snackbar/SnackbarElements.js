@@ -6,13 +6,19 @@ export const MainSnackbar = styled.div`
         left: 50%;
         top: 5%;
         transform: translate(-50%, -50%);
-        width: 350px;
+        width: 400px;
         height: 45px;
         border-radius: 8px;
         display: flex;
         align-items: center;
         text-align: center;
         color: #fff;
+
+        @media (min-width: 320px) and (max-width: 599px) {
+            top: 15%;
+            width: 360px;
+            position: fixed;
+        }
 
         .icon {
             flex: 15%;
