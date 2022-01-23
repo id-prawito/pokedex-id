@@ -1,16 +1,13 @@
-import React, { useState, useRef } from "react";
-// import ReactTooltip from "react-tooltip";
 import pokeball from "../../assets/images/logo.png";
-import Modal from "../Modal";
-import Snackbar from "../Snackbar";
+import React, { useState, useRef } from "react";
 import { MainButton } from "./ButtonElements";
+import Snackbar from "../Snackbar";
+import Modal from "../Modal";
 
 const ButonCatch = ({ data, image, tipe, nama, number }) => {
     const [random, setRandom] = useState(0);
     const [showModal, setShowModal] = useState(false);
-
     const snackbarRef11 = useRef(null);
-
     const SnackbarType = {
         success: "success",
         fail: "fail",
@@ -24,17 +21,14 @@ const ButonCatch = ({ data, image, tipe, nama, number }) => {
         if (num === 1) {
             setShowModal((prev) => !prev);
         } else {
-            console.log("Ups");
+            // console.log("Ups");
         }
     };
 
     return (
         <MainButton>
             <div className="icon_bungkus" data-tip data-for="catch" key="catch">
-                <button
-                    style={{ background: "transparent" }}
-                    onClick={clickHandle}
-                >
+                <button className="button__item" onClick={clickHandle}>
                     <img className="icon_main" src={pokeball} alt="pokeball" />
                 </button>
                 <Modal
@@ -46,14 +40,6 @@ const ButonCatch = ({ data, image, tipe, nama, number }) => {
                     showModal={showModal}
                     setShowModal={setShowModal}
                 />
-                {/* <ReactTooltip
-                    place="top"
-                    type="light"
-                    effect="solid"
-                    id="catch"
-                >
-                    <p className="text_tooltip">Catch The Pokemon {random}</p>
-                </ReactTooltip> */}
                 {random === 1 ? (
                     <Snackbar
                         ref={snackbarRef11}

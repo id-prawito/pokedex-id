@@ -107,7 +107,6 @@ export const HomeSectionList = ({ description }) => {
                                 </button>
                             )}
                         </JudulButtonRemove>
-
                         <Snackbar
                             ref={snackbarRef}
                             message="Succes to remove all your Pokemon!"

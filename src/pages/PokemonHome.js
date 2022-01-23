@@ -178,8 +178,6 @@ export class PokemonHome extends React.Component {
                 showLoading: false,
             });
         }
-        // console.log("allPokes");
-        // console.log(this.state.allPokemons);
     };
 
     fetchEvoDetails = async (url) => {
@@ -200,8 +198,6 @@ export class PokemonHome extends React.Component {
             });
             evoData = evoData["evolves_to"][0];
         } while (!!evoData && evoData.hasOwnProperty("evolves_to"));
-        // console.log("evochain");
-        // console.log(evoChain);
         this.fetchEvoImages(evoChain);
     };
 
@@ -260,7 +256,6 @@ export class PokemonHome extends React.Component {
             genderRate: "",
             genera: "",
         });
-        // this.fetchEvoChainURL(pokemon);
         this.fetchPokemonDescription(pokemon);
     };
 
@@ -272,7 +267,6 @@ export class PokemonHome extends React.Component {
             .catch((err) => console.log("Error:", err));
         this.fetchEvoDetails(response.data.evolution_chain.url);
         try {
-            // const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemon_name}`).catch((err) => console.log("Error:", err));
             for (
                 let i = 0;
                 i < response.data.flavor_text_entries.length - 1;
@@ -302,7 +296,6 @@ export class PokemonHome extends React.Component {
                 description: "Description not found",
             });
         }
-        // console.log("description");
     };
 
     handleChangeRegions = (value) => {
@@ -324,8 +317,7 @@ export class PokemonHome extends React.Component {
                 break;
             }
         }
-        // console.log("limit");
-        console.log(value.value);
+        // console.log(value.value);
     };
 
     handleChangeTypes = (value) => {
@@ -478,7 +470,6 @@ export class PokemonHome extends React.Component {
 
         document.title = `Pokédex-id`;
 
-        // console.log(this.state.allPokemons);
         return (
             <>
                 <Scroll />

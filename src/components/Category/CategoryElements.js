@@ -1,83 +1,85 @@
 import styled from "styled-components";
+import { devices } from "../../services/media";
 
 export const CategoryContainer = styled.div`
+    display: flex;
     width: 100%;
-    /* height: 80vh; */
     justify-content: center;
+    align-items: center;
     margin-right: auto;
     margin-left: auto;
-    align-items: center;
-    display: flex;
 
     @media (min-width: 1281px) {
         max-width: 1300px;
     }
 
-    @media (min-width: 1100px) and (max-width: 1280px) {
+    ${devices.laptop} {
         max-width: 1100px;
     }
 
-    @media (min-width: 840px) and (max-width: 1099px) {
+    ${devices.tablet} {
         max-width: 950px;
     }
 
-    @media (min-width: 600px) and (max-width: 839px) {
+    ${devices.ipads} {
         max-width: 830px;
     }
 `;
 
 export const CategoryContent = styled.div`
     display: grid;
-    width: 100%;
-    padding: 35px;
     grid-template-rows: 150px auto;
+    padding: 35px;
+    width: 100%;
 
-    @media (min-width: 1100px) and (max-width: 1280px) {
+    ${devices.laptop} {
         grid-template-columns: auto;
         justify-content: center;
     }
 
-    @media (min-width: 840px) and (max-width: 1099px) {
+    ${devices.tablet} {
         grid-template-columns: auto;
         justify-content: center;
     }
 
-    @media (min-width: 600px) and (max-width: 839px) {
+    ${devices.ipads} {
         grid-template-columns: auto;
         gap: 30px;
     }
 
-    @media (min-width: 320px) and (max-width: 599px) {
+    ${devices.smartphone} {
         grid-template-columns: auto;
     }
 `;
 
 export const IconCategory = styled.div`
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
+    flex-direction: row;
     gap: 20px;
 
-    @media (min-width: 600px) and (max-width: 839px) {
-        flex-direction: row;
+    ${devices.ipads} {
         justify-content: center;
+        flex-direction: row;
         gap: 20px;
     }
 
-    @media (min-width: 320px) and (max-width: 599px) {
-        flex-direction: row;
+    ${devices.smartphone} {
         justify-content: center;
+        flex-direction: row;
         gap: 20px;
     }
 `;
 
 export const Icon = styled.img`
+    --size: 30px;
     transition: 0.1s all ease;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
+    height: var(--size);
+    width: var(--size);
     opacity: 0.5;
     filter: grayscale(100%);
+    cursor: pointer;
+
     &:hover {
         opacity: 1;
         filter: grayscale(0%);
@@ -86,17 +88,18 @@ export const Icon = styled.img`
 `;
 
 export const Description = styled.p`
-    font-size: 40px;
-    font-weight: 500;
     color: rgba(255, 255, 255, 0.64);
     line-height: 60px;
+    font-weight: 500;
+    font-size: 40px;
 
-    @media (min-width: 600px) and (max-width: 839px) {
-        margin-top: 0;
+    ${devices.ipads} {
         line-height: 45px;
         font-size: 35px;
+        margin-top: 0;
     }
-    @media (min-width: 320px) and (max-width: 599px) {
+
+    ${devices.smartphone} {
         margin-bottom: 20px;
         line-height: 45px;
         font-size: 35px;
@@ -105,30 +108,29 @@ export const Description = styled.p`
 
 export const BungkusIcon = styled.div`
     display: flex;
-    background-color: #5547ff;
-    border-radius: 16px;
     justify-content: center;
     align-items: center;
+    background-color: #5547ff;
+    border-radius: 16px;
     height: 60px;
     width: 60px;
-    border-radius: 16px;
 `;
 
 export const Text = styled.p`
     display: inline-block;
-    font-size: 12px;
     color: rgba(255, 255, 255, 0.64);
     font-weight: 600;
+    font-size: 12px;
 `;
 
 export const ImgBox = styled.div`
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
+    transition: 0.5s;
+    height: 220px;
     z-index: 100;
     width: 100%;
-    height: 220px;
-    transition: 0.5s;
+    top: 50%;
 `;
 
 export const CardContent = styled.div`
@@ -138,24 +140,24 @@ export const CardContent = styled.div`
     .card__content_home {
         display: grid;
         grid-template-columns: repeat(5, auto);
-        align-items: center;
         justify-content: center;
+        align-items: center;
         gap: 30px;
 
-        @media (min-width: 320px) and (max-width: 599px) {
-            grid-template-columns: repeat(1, auto);
-        }
-
-        @media (min-width: 1100px) and (max-width: 1300px) {
+        ${devices.laptop} {
             grid-template-columns: repeat(4, auto);
         }
 
-        @media (min-width: 840px) and (max-width: 1099px) {
+        ${devices.tablet} {
             grid-template-columns: repeat(3, auto);
         }
 
-        @media (min-width: 600px) and (max-width: 839px) {
-            grid-template-columns: auto auto;
+        ${devices.ipads} {
+            grid-template-columns: repeat(2, auto);
+        }
+
+        ${devices.smartphone} {
+            grid-template-columns: repeat(1, auto);
         }
     }
 `;
@@ -169,7 +171,7 @@ export const BungkusanIconnya = styled.div`
     flex-direction: row;
     gap: 10px;
 
-    @media (min-width: 320px) and (max-width: 599px) {
+    ${devices.smartphone} {
         display: none;
     }
 `;

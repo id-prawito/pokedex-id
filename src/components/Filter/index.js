@@ -93,7 +93,6 @@ class Filters extends React.Component {
             key: nilaiSortby,
         }));
 
-        // console.log(optionsSortby);
         return (
             <>
                 <SelectContainer>
@@ -106,7 +105,6 @@ class Filters extends React.Component {
                             />
 
                             <Select
-                                // value={this.props.valueregion}
                                 placeholder="Regions"
                                 styles={customStyles}
                                 options={optionsRegions}
@@ -121,7 +119,6 @@ class Filters extends React.Component {
                                 style={stylesLogo}
                             />
                             <Select
-                                // value={this.props.valuetype}
                                 placeholder="Types"
                                 styles={customStyles}
                                 options={optionsTypes}
@@ -135,7 +132,6 @@ class Filters extends React.Component {
                                 style={stylesLogo}
                             />
                             <Select
-                                // value={this.props.sorttype}
                                 placeholder="Sort By"
                                 styles={customStyles}
                                 options={optionsSortby}

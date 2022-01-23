@@ -102,8 +102,8 @@ const PokemonDetails = () => {
                             .front_default,
                 };
                 setImages(Objectnya);
-            } catch (e) {
-                console.log("error");
+            } catch {
+                // console.log("error");
             }
         };
         getData();
@@ -244,32 +244,15 @@ const PokemonDetails = () => {
                     evonyaNamanya.push(ObjectTik);
                 }
                 setBisa(evonyaNamanya);
-            } catch (error) {
-                console.log("error", error);
+            } catch {
+                // console.log("error", error);
             }
         };
         getAbility();
     }, [urlability]);
 
     let stringName = name.charAt(0).toUpperCase() + name.slice(1);
-
     document.title = `${stringName} | Pokédex-id`;
-
-    // console.log(images);
-    // console.log(statistics);
-    // console.log(abs);
-    // console.log(types);
-    // console.log(deskripsi);
-    // console.log(genera);
-    // console.log(evochain);
-    // console.log(data);
-    // console.log(abilitydetail);
-    // console.log(idnya);
-
-    // const location = useLocation();
-    // const { id } = location.state;
-
-    // console.log(id);
 
     return (
         <>
