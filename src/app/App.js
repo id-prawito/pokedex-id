@@ -7,22 +7,19 @@ import "./app.css";
 import { GlobalProvider } from "../context/GlobalState";
 
 class App extends React.Component {
-    render() {
-        return (
-            <GlobalProvider>
-                <BrowserRouter basename="/pokedex-id">
-                    <Routes>
-                        <Route exact path="/" element={<PokemonHome />} />
-                        <Route
-                            path="/pokemon/:name"
-                            element={<PokemonDetails />}
-                        />
-                        <Route path="/mypokemon" element={<PokemonList />} />
-                    </Routes>
-                </BrowserRouter>
-            </GlobalProvider>
-        );
-    }
+  render() {
+    return (
+      <GlobalProvider>
+        <BrowserRouter basename="">
+          <Routes>
+            <Route exact path="/" element={<PokemonHome />} />
+            <Route path="/pokemon/:name" element={<PokemonDetails />} />
+            <Route path="/mypokemon" element={<PokemonList />} />
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
+    );
+  }
 }
 
 export default App;
