@@ -14,8 +14,9 @@ Preview Pokédex-id : [Here](https://id-prawito.github.io/pokedex-id/)
 
 To begin using this project, choose one of the following options to get started:
 
-* Clone the repo: `git clone https://github.com/id-prawito/pokedex-id.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/id-prawito/pokedex-id)
+- Clone the repo: `git clone https://github.com/id-prawito/pokedex-id.git`
+- [Fork, Clone, or Download on GitHub](https://github.com/id-prawito/pokedex-id)
+- Note: using node.js version 16.8.0
 
 Basic Usage
 
